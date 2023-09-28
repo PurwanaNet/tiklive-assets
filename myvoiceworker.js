@@ -52,7 +52,59 @@ const welcomemsg = [
             joinedUsers.splice(0, joinedUsers.length - maxItems);
         }
     }
+	
+	
+	// Open the IndexedDB database
+	var db;
+	var request = indexedDB.open('mydb', 1);
 
+	// Create or update the leaderboard object store
+	request.onupgradeneeded = function (event) {
+		db = event.target.result;
+		db.createObjectStore('leaderboard', { keyPath: 'username' });
+	};
+
+	request.onsuccess = function (event) {
+		db = event.target.result;
+		// You can perform your IndexedDB operations here
+
+		// Function to insert or update a score
+		function insertOrUpdateScore(username, score) {
+			var transaction = db.transaction(['leaderboard'], 'readwrite');
+			var store = transaction.objectStore('leaderboard');
+			var request = store.put({ username: username, score: score });
+
+			request.onsuccess = function (event) {
+				//console.log('Score inserted or updated successfully');
+			};
+
+			request.onerror = function (event) {
+				console.error('Failed to insert or update score');
+			};
+		}
+
+		// Function to reset the leaderboard
+		function resetLeaderboard() {
+			var transaction = db.transaction(['leaderboard'], 'readwrite');
+			var store = transaction.objectStore('leaderboard');
+			var request = store.clear();
+
+			request.onsuccess = function (event) {
+				console.log('Leaderboard reset successfully.');
+			};
+
+			request.onerror = function (event) {
+				console.error('Error resetting leaderboard: ' + event.target.error.message);
+			};
+		}
+	};
+
+	request.onerror = function (event) {
+		console.error('Error opening database: ' + event.target.errorCode);
+	};
+	
+
+	/*
     var db = openDatabase('mydb', '1.0', 'My Database', 2 * 1024 * 1024);
 
     // Create the leaderboard table if it doesn't exist
@@ -93,7 +145,7 @@ const welcomemsg = [
                 });
             });
         }
-    }
+    }*/
     /*
     function storeChat(username,text){
         if(text.includes('joined') && !username.startsWith('user')){
@@ -130,6 +182,7 @@ const welcomemsg = [
         }
     }
 
+	/*
     function userTapTops(){
         let result = '';
         db.transaction(function(tx) {
@@ -184,6 +237,73 @@ const welcomemsg = [
             );
           });        
     }
+	*/
+	const clctime = 1000*60*10;
+	
+	function userTapTops() {
+		let result = '';
+		const transaction = db.transaction(['leaderboard'], 'readonly');
+		const objectStore = transaction.objectStore('leaderboard');
+
+		const index = objectStore.index('scoreIndex');
+		const request = index.openCursor(null, 'prev');
+
+		const usernames = [];
+
+		request.onsuccess = function(event) {
+			const cursor = event.target.result;
+			if (cursor && usernames.length < 3) {
+				usernames.push(cursor.value.username);
+				cursor.continue();
+			} else {
+				console.log('Top 3 usernames by score:', usernames);
+				result = usernames.join(',');
+			}
+		};
+
+		transaction.onerror = function(event) {
+			console.error('Error selecting usernames:', event.target.error);
+		};
+
+		return result;
+	}
+
+	function checkLikedCompetition() {
+		console.log('checkLikedCompetition : ');
+
+		const transaction = db.transaction(['leaderboard'], 'readonly');
+		const objectStore = transaction.objectStore('leaderboard');
+
+		const index = objectStore.index('scoreIndex');
+		const request = index.openCursor(IDBKeyRange.lowerBound(1), 'prev');
+
+		const usernames = [];
+
+		request.onsuccess = function(event) {
+			const cursor = event.target.result;
+			if (cursor && usernames.length < 3) {
+				usernames.push(cursor.value.username);
+				cursor.continue();
+			} else {
+				console.log('Top 3 usernames by score:', usernames);
+				const usertaptops = usernames.join(',');
+				if (usernames.length > 0) {
+					self.postMessage('says--delim--' + 'tap tap score sudah direset! nilai tertinggi adalah : ' + usertaptops);
+					//responsiveVoice.speak('tap tap score sudah direset! nilai tertinggi adalah : '+usertaptops,"Indonesian Female");
+					//console.log('say : tap tap score direset');
+					resetLeaderBoard();
+					setTimeout(checkLikedCompetition, clctime);
+				} else {
+					setTimeout(checkLikedCompetition, clctime);
+				}
+			}
+		};
+
+		transaction.onerror = function(event) {
+			console.error('Error selecting usernames:', event.target.error);
+			setTimeout(checkLikedCompetition, clctime);
+		};
+	}	
 
     setTimeout(regularSays,3000);
     setTimeout(checkLikedCompetition,clctime);
