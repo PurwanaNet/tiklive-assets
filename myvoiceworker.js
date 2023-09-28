@@ -315,7 +315,7 @@ self.addEventListener('message', function(e) {
 
     // Assuming the first part is the command and the rest is data
     const command = parts[0];
-	console.log('command : '+command);
+	//console.log('command : '+command);
 	if(command=='joined'){
 		pushToJoined(parts[1]);
 	}else if(command=='liked'){
