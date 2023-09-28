@@ -97,7 +97,7 @@
 				var updateRequest = store.put(data);
 
 				updateRequest.onsuccess = function (event) {
-					console.log('Score updated successfully');
+					//console.log('Score updated successfully');
 				};
 
 				updateRequest.onerror = function (event) {
@@ -108,7 +108,7 @@
 				var insertRequest = store.put({ username: username, score: score });
 
 				insertRequest.onsuccess = function (event) {
-					console.log('Score inserted successfully');
+					//console.log('Score inserted successfully');
 				};
 
 				insertRequest.onerror = function (event) {
@@ -129,7 +129,7 @@
 		var request = store.clear();
 
 		request.onsuccess = function (event) {
-			console.log('Leaderboard reset successfully.');
+			//console.log('Leaderboard reset successfully.');
 		};
 
 		request.onerror = function (event) {
@@ -294,7 +294,7 @@
 				usernames.push(cursor.value.username);
 				cursor.continue();
 			} else {
-				console.log('Top 3 usernames by score:', usernames);
+				//console.log('Top 3 usernames by score:', usernames);
 				result = usernames.join(',');
 			}
 		};
@@ -307,12 +307,13 @@
 	}
 
 	function checkLikedCompetition() {
-		console.log('checkLikedCompetition : ');
+		//console.log('checkLikedCompetition : ');
 
 		const transaction = db.transaction(['leaderboard'], 'readonly');
 		const objectStore = transaction.objectStore('leaderboard');
 
-		const index = objectStore.index('scoreIndex');
+		//const index = objectStore.index('scoreIndex');
+		const index = objectStore.index('score');
 		const request = index.openCursor(IDBKeyRange.lowerBound(1), 'prev');
 
 		const usernames = [];
@@ -323,7 +324,7 @@
 				usernames.push(cursor.value.username);
 				cursor.continue();
 			} else {
-				console.log('Top 3 usernames by score:', usernames);
+				//console.log('Top 3 usernames by score:', usernames);
 				const usertaptops = usernames.join(',');
 				if (usernames.length > 0) {
 					self.postMessage('says--delim--' + 'tap tap score sudah direset! nilai tertinggi adalah : ' + usertaptops);
