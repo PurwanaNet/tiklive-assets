@@ -1,6 +1,6 @@
 	function joinedmsg (){
 	const welcomemsg = [
-		"Selamat bergabung, @{usernames}! ðŸŽ‰ Mari kita buat live ini makin rame dengan tap-tap layar yang banyak!",
+		"Selamat bergabung, @{usernames}! Mari kita buat live ini makin rame dengan tap-tap layar yang banyak!",
 		"Hai @{usernames}! Kunjungi CLSRM dot purwana dot net untuk memberikan dukunganmu ya!",
 		"Selamat datang, @{usernames}! Kami terima donasi berupa mawar-mawar dari para fans setia!",
 		"Yuk, @{usernames}! Terima kotak harta untuk membuat live kita semakin seru!",
