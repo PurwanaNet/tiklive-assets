@@ -165,7 +165,7 @@ const welcomemsg = [
     }*/
 
     function regularSays(){
-		console.log('regularSays : ');
+		//console.log('regularSays : ');
         if(joinedUsers.length > 0 || lastgiver != '' || justmsg != ''){
                 let resultmsg = (justmsg!='')?justmsg+'.':'';
                 resultmsg += (lastgiver!='')?lastgiver+', terimakasih sudah saling berbagi koin. ':'';
