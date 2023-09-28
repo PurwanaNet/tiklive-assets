@@ -113,6 +113,7 @@ const welcomemsg = [
     }*/
 
     function regularSays(){
+		console.log('regularSays : ');
         if(joinedUsers.length > 0 || lastgiver != '' || justmsg != ''){
                 let resultmsg = (justmsg!='')?justmsg+'.':'';
                 resultmsg += (lastgiver!='')?lastgiver+', terimakasih sudah saling berbagi koin. ':'';
@@ -154,6 +155,7 @@ const welcomemsg = [
     const clctime = 1000*60*10;
 
     function checkLikedCompetition(){
+		console.log('checkLikedCompetition : ');
         db.transaction(function(tx) {
             tx.executeSql(
               "SELECT username FROM leaderboard WHERE score > 0 ORDER BY score DESC LIMIT 3",
@@ -193,6 +195,7 @@ self.addEventListener('message', function(e) {
 
     // Assuming the first part is the command and the rest is data
     const command = parts[0];
+	console.log('command : '+command);
 	if(command=='joined'){
 		pushToJoined(parts[1]);
 	}else if(command=='liked'){
