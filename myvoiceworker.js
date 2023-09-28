@@ -1,38 +1,38 @@
-function joinedmsg (){
-const welcomemsg = [
-    "Selamat bergabung, @{usernames}! ðŸŽ‰ Mari kita buat live ini makin rame dengan tap-tap layar yang banyak! ðŸ‘",
-    "Hai @{usernames}! Kunjungi CLSRM dot purwana dot net untuk memberikan dukunganmu ya! ðŸ’ª",
-    "Selamat datang, @{usernames}! Kami terima donasi berupa mawar-mawar dari para fans setia! ðŸŒ¹",
-    "Yuk, @{usernames}! Terima kotak harta untuk membuat live kita semakin seru! ðŸ’°",
-    "Kompetisi tap-tap layar akan berakhir setiap 10 menit, @{usernames}! Ayo, tunjukkan kecepatanmu! â°ðŸ‘†",
-    "Selamat bergabung, @{usernames}! Jangan lupa follow dan tap-tap layar, ya! ðŸ˜‰",
-    "Mari sambut hangat @{usernames} di TikTok Live kita hari ini! ðŸ™Œ",
-    "Hi @{usernames}! Selamat datang di live yang penuh keseruan ini! ðŸŽˆ",
-    "Terima kasih sudah hadir, @{usernames}! Ayo, ramekan live ini dengan tap-tap layar yang semakin banyak! ðŸ‘",
-    "Selamat datang di TikTok Live, @{usernames}! Jangan lupa kunjungi CLSRM dot purwana dot net ya! ðŸ“š",
-    "Hai @{usernames}! Tap tap koin untuk donasinya yang berharga! ðŸ™",
-    "Yuk, dukung live ini dengan memberikan kotak harta kepada @{usernames}! ðŸ’Ž",
-    "Kompetisi tap-tap layar setiap 10 menit ya, @{usernames}! Ayo, semangat! ðŸ”¥",
-    "Selamat bergabung, @{usernames}! Mari buat live ini makin meriah! ðŸŽŠ",
-    "Hi @{usernames}! Semangat untuk live seru kita hari ini! ðŸ’ƒ",
-    "Terima kasih, @{usernames}, sudah hadir di live ini! Ayo, tap-tap layar sebanyak mungkin! ðŸ‘†",
-    "Selamat datang, @{usernames}! Jangan lupa follow dan bagikan live ini! ðŸ“¢",
-    "Mari kita berikan sambutan hangat kepada @{usernames} di TikTok Live kita! ðŸ‘‹",
-    "Hi @{usernames}! Ayo, buat live ini makin seru dengan komentar dan tap-tap layarmu! ðŸ’¬",
-    "Terima kasih atas kehadiranmu, @{usernames}! Dukunganmu sangat berarti! ðŸ¤—",
-    "Selamat datang di live kita, @{usernames}! Yuk, kunjungi CLSRM dot purwana dot net! ðŸ«",
-    "Hai @{usernames}! Yuk kasih mawar-mawarnya yang cantik! ðŸŒ·",
-    "Yuk, beri @{usernames} kotak harta agar live ini semakin meriah! ðŸŽ",
-    "Kompetisi tap-tap layar akan berakhir setiap 10 menit, @{usernames}! Siap-siap ya! â³",
-    "Selamat bergabung, @{usernames}! Mari kita rayakan live ini dengan semangat! ðŸ¥³"
-    ];
+	function joinedmsg (){
+	const welcomemsg = [
+		"Selamat bergabung, @{usernames}! ðŸŽ‰ Mari kita buat live ini makin rame dengan tap-tap layar yang banyak! ðŸ‘",
+		"Hai @{usernames}! Kunjungi CLSRM dot purwana dot net untuk memberikan dukunganmu ya! ðŸ’ª",
+		"Selamat datang, @{usernames}! Kami terima donasi berupa mawar-mawar dari para fans setia! ðŸŒ¹",
+		"Yuk, @{usernames}! Terima kotak harta untuk membuat live kita semakin seru! ðŸ’°",
+		"Kompetisi tap-tap layar akan berakhir setiap 10 menit, @{usernames}! Ayo, tunjukkan kecepatanmu! â°ðŸ‘†",
+		"Selamat bergabung, @{usernames}! Jangan lupa follow dan tap-tap layar, ya! ðŸ˜‰",
+		"Mari sambut hangat @{usernames} di TikTok Live kita hari ini! ðŸ™Œ",
+		"Hi @{usernames}! Selamat datang di live yang penuh keseruan ini! ðŸŽˆ",
+		"Terima kasih sudah hadir, @{usernames}! Ayo, ramekan live ini dengan tap-tap layar yang semakin banyak! ðŸ‘",
+		"Selamat datang di TikTok Live, @{usernames}! Jangan lupa kunjungi CLSRM dot purwana dot net ya! ðŸ“š",
+		"Hai @{usernames}! Tap tap koin untuk donasinya yang berharga! ðŸ™",
+		"Yuk, dukung live ini dengan memberikan kotak harta kepada @{usernames}! ðŸ’Ž",
+		"Kompetisi tap-tap layar setiap 10 menit ya, @{usernames}! Ayo, semangat! ðŸ”¥",
+		"Selamat bergabung, @{usernames}! Mari buat live ini makin meriah! ðŸŽŠ",
+		"Hi @{usernames}! Semangat untuk live seru kita hari ini! ðŸ’ƒ",
+		"Terima kasih, @{usernames}, sudah hadir di live ini! Ayo, tap-tap layar sebanyak mungkin! ðŸ‘†",
+		"Selamat datang, @{usernames}! Jangan lupa follow dan bagikan live ini! ðŸ“¢",
+		"Mari kita berikan sambutan hangat kepada @{usernames} di TikTok Live kita! ðŸ‘‹",
+		"Hi @{usernames}! Ayo, buat live ini makin seru dengan komentar dan tap-tap layarmu! ðŸ’¬",
+		"Terima kasih atas kehadiranmu, @{usernames}! Dukunganmu sangat berarti! ðŸ¤—",
+		"Selamat datang di live kita, @{usernames}! Yuk, kunjungi CLSRM dot purwana dot net! ðŸ«",
+		"Hai @{usernames}! Yuk kasih mawar-mawarnya yang cantik! ðŸŒ·",
+		"Yuk, beri @{usernames} kotak harta agar live ini semakin meriah! ðŸŽ",
+		"Kompetisi tap-tap layar akan berakhir setiap 10 menit, @{usernames}! Siap-siap ya! â³",
+		"Selamat bergabung, @{usernames}! Mari kita rayakan live ini dengan semangat! ðŸ¥³"
+		];
 
-    const randomIndex = Math.floor(Math.random() * welcomemsg.length);
+		const randomIndex = Math.floor(Math.random() * welcomemsg.length);
 
-    // Use the random index to select a random item from the array
-    const randomItem = welcomemsg[randomIndex];
-    return randomItem;
-}
+		// Use the random index to select a random item from the array
+		const randomItem = welcomemsg[randomIndex];
+		return randomItem;
+	}
     let joinedUsers = [];
 
     let justmsg = '';
@@ -67,37 +67,75 @@ const welcomemsg = [
 	request.onsuccess = function (event) {
 		db = event.target.result;
 		// You can perform your IndexedDB operations here
-
-		// Function to insert or update a score
-		function insertOrUpdateScore(username, score) {
-			var transaction = db.transaction(['leaderboard'], 'readwrite');
-			var store = transaction.objectStore('leaderboard');
-			var request = store.put({ username: username, score: score });
-
-			request.onsuccess = function (event) {
-				//console.log('Score inserted or updated successfully');
-			};
-
-			request.onerror = function (event) {
-				console.error('Failed to insert or update score');
-			};
-		}
-
-		// Function to reset the leaderboard
-		function resetLeaderboard() {
-			var transaction = db.transaction(['leaderboard'], 'readwrite');
-			var store = transaction.objectStore('leaderboard');
-			var request = store.clear();
-
-			request.onsuccess = function (event) {
-				console.log('Leaderboard reset successfully.');
-			};
-
-			request.onerror = function (event) {
-				console.error('Error resetting leaderboard: ' + event.target.error.message);
-			};
-		}
 	};
+	
+	// Function to insert or update a score
+	function insertOrUpdateScore(username, score) {
+		/*
+		var transaction = db.transaction(['leaderboard'], 'readwrite');
+		var store = transaction.objectStore('leaderboard');
+		var request = store.put({ username: username, score: score });
+
+		request.onsuccess = function (event) {
+			//console.log('Score inserted or updated successfully');
+		};
+
+		request.onerror = function (event) {
+			console.error('Failed to insert or update score');
+		};*/
+		var transaction = db.transaction(['leaderboard'], 'readwrite');
+		var store = transaction.objectStore('leaderboard');
+		
+		var getRequest = store.get(username);
+
+		getRequest.onsuccess = function (event) {
+			var data = event.target.result;
+
+			if (data) {
+				// If the user exists in the database, update the score
+				data.score += score;
+				var updateRequest = store.put(data);
+
+				updateRequest.onsuccess = function (event) {
+					console.log('Score updated successfully');
+				};
+
+				updateRequest.onerror = function (event) {
+					console.error('Failed to update score');
+				};
+			} else {
+				// If the user doesn't exist, insert a new record
+				var insertRequest = store.put({ username: username, score: score });
+
+				insertRequest.onsuccess = function (event) {
+					console.log('Score inserted successfully');
+				};
+
+				insertRequest.onerror = function (event) {
+					console.error('Failed to insert score');
+				};
+			}
+		};
+
+		getRequest.onerror = function (event) {
+			console.error('Failed to get score for username');
+		};		
+	}
+
+	// Function to reset the leaderboard
+	function resetLeaderboard() {
+		var transaction = db.transaction(['leaderboard'], 'readwrite');
+		var store = transaction.objectStore('leaderboard');
+		var request = store.clear();
+
+		request.onsuccess = function (event) {
+			console.log('Leaderboard reset successfully.');
+		};
+
+		request.onerror = function (event) {
+			console.error('Error resetting leaderboard: ' + event.target.error.message);
+		};
+	}	
 
 	request.onerror = function (event) {
 		console.error('Error opening database: ' + event.target.errorCode);
